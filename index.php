@@ -12,4 +12,5 @@ if (!isset($_SESSION['user'])){
     exit;
 }else{
     $user = $_SESSION['user'];
+    echo "Welcome ".$user;
 }

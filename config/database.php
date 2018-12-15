@@ -7,7 +7,7 @@ class Database
      */
 
     private $host = "localhost";
-    private $db = "school_finance";
+    private $db = "trello";
     private $port = "3306";
     private $user = "root";
     private $pass = "54985498";
