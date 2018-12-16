@@ -8,6 +8,11 @@ i {
     z-index: 2;
 }
 
+nav .container-fluid{
+    background-color: #8355C3;
+    color: #ffffff;
+}
+
 .card-color-1 {
     --bg-color: #ffd861;
     --bg-color-light: #ffeeba;
@@ -206,4 +211,26 @@ i {
 
 #login h2 {
     color: #FFFFFF;
+}
+
+#index h3{
+    color: #FFFFFF;
+}
+
+#index .row{
+    border-radius: 5px;
+}
+
+#index .col-lg-4 .grey{
+    background-color: #3c3c3c;
+}
+
+
+#index .col-lg-4 .amber{
+    background-color: #c0a16b;
+}
+
+
+#index .col-lg-4 .green{
+    background-color: #00dd00;
 }
