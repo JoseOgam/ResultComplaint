@@ -77,8 +77,7 @@ if (!isset($_SESSION['user'])) {
                     echo "<div class='card item-card'>
 <div class='row'><div class='col-md-6'><h5>{$issue['title']}</h5></div>
 <div class='col-md-6'><a href='update.php?issueId={$issue['id']}'><i class='material-icons pull-right'>edit</i></a>
- <a href='update.php?cardId={$issue['id']}'><i class='material-icons'>lock_open</i></a></div></div>
-                                
+ <a href='update.php?cardId={$issue['id']}'><i class='material-icons'>lock_open</i></a></div></div> 
                                 <p>{$issue['description']}</p>
                               </div>";
                 }
@@ -96,7 +95,9 @@ if (!isset($_SESSION['user'])) {
 
                 foreach ($issues as $issue) {
                     echo "<div class='card item-card'>
-                                <h5>{$issue['title']}</h5>
+<div class='row'><div class='col-md-6'><h5>{$issue['title']}</h5></div>
+<div class='col-md-6'><a href='update.php?issueId={$issue['id']}'><i class='material-icons pull-right'>edit</i></a>
+ <a href='update.php?cardId={$issue['id']}'><i class='material-icons'>lock_open</i></a></div></div> 
                                 <p>{$issue['description']}</p>
                               </div>";
                 }
@@ -114,7 +115,9 @@ if (!isset($_SESSION['user'])) {
 
                 foreach ($issues as $issue) {
                     echo "<div class='card item-card'>
-                                <h5>{$issue['title']}</h5>
+<div class='row'><div class='col-md-6'><h5>{$issue['title']}</h5></div>
+<div class='col-md-6'><a href='update.php?issueId={$issue['id']}'><i class='material-icons pull-right'>edit</i></a>
+ <a href='update.php?cardId={$issue['id']}'><i class='material-icons'>lock</i></a></div></div> 
                                 <p>{$issue['description']}</p>
                               </div>";
                 }
