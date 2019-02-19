@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * @author : IsaacNgeno
+ * @author : jose
  * Date: 12/17/18
  */
 require_once('../config/database.php');

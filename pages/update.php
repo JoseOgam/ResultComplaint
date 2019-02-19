@@ -16,29 +16,29 @@ if (!isset($_SESSION['user'])) {
     $pdo = $db->getConnection();
 }
 
-if (isset($_GET['cardId'])){
+if (isset($_GET['cardId'])) {
     $id = $_GET['cardId'];
     $statement = $pdo->prepare("SELECT * FROM `issues` WHERE `id`=?");
     $statement->execute(array($id));
     $result = $statement->fetch();
-    if ($result['status'] == 'complete'){
+    if ($result['status'] == 'complete') {
         $status = "in_que";
-    }elseif ($result['status'] != 'complete'){
+    } elseif ($result['status'] != 'complete') {
         $status = "complete";
     }
     $statement = $pdo->prepare("UPDATE `issues` SET `status`=? WHERE `id`=?");
-    if ($statement->execute(array($status, $id))){
+    if ($statement->execute(array($status, $id))) {
         header("Location: index.php");
         exit;
     }
 
 }
 
-if (isset($_GET['issueId'])){
+if (isset($_GET['issueId'])) {
     $issueId = $_GET['issueId'];
-    $stm = $pdo->prepare("");
-    $stm->execute();
-    $result = $stm->fetch();
+    $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `id`=?");
+    $stm->execute(array($issueId));
+    $issue = $stm->fetch();
 }
 
 ?>
@@ -82,8 +82,64 @@ if (isset($_GET['issueId'])){
 <div class="container">
 
     <!-- CONTENT HERE -->
+    <div class="row">
+        <div class="col-lg-4"><h4>Title</h4></div>
+        <div class="col-lg-8"><?php echo "<div >{$issue['title']}</div>" ?></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><h4>Description</h4></div>
+        <div class="col-lg-8"><?php echo "<div >{$issue['description']}</div>" ?></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><h4>Date Created</h4></div>
+        <div class="col-lg-8"><?php echo "<div >{$issue['date_raised']}</div>" ?></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><h4>Raised by</h4></div>
+        <div class="col-lg-8"><?php echo "<div >{$issue['regno']}</div>" ?></div>
+    </div>
+    <h4>Assign Issue</h4>
 
+    <form action="update.php" method="post" class="form-horizontal">
+        <?php
+        if (isset($_POST['assign'])){
+            $assignee = $_POST['assignee'];
+            $id = $issueId;
+            $admId = $_SESSION['user'];
+            $progress = "running";
+            $remarks = $_POST['remarks'];
+            if (!empty($assignee)){
+                $stm = $pdo->prepare("INSERT INTO `issue_progress`(`issue_id`, `admin_id`, `progress`, `remarks`) VALUES (?, ?, ?, ?, ?)");
+                if ($stm->execute(array($id, $admId, $progress, $remarks))){
 
+                    $state = $pdo->prepare("UPDATE `issues` SET `status`=? WHERE `id`=?");
+                    $state->execute(array($progress, $id));
+                    echo "<div class='alert alert-success'>Issue has been successfully assigned to {$assignee}</div>";
+                }
+
+            }
+        }
+        ?>
+        <select class="form-control" name="assignee" id="assign" >
+            <?php
+            $statement = $pdo->prepare("SELECT * FROM `admins`");
+            $statement->execute();
+            if ($statement->rowCount() > 0){
+                $admins = $statement->fetchAll();
+
+                foreach ($admins as $admin){
+                    echo "<option value='{$admin['username']}' class='form-control'>{$admin['username']}</option>";
+                }
+            }else{
+                echo "<div class='alert alert-info'>No admins yet</div>";
+            }
+            ?>
+        </select>
+        <textarea name="remarks" id="remarks" cols="15" rows="5" class="form-control"></textarea>
+        <button type="submit" name="assign" class="btn btn-default">Assign</button>
+    </form>
+
+    <h4>Issue Progress Report</h4>
 </div>
 
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>

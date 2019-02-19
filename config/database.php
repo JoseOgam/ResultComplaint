@@ -10,7 +10,7 @@ class Database
     private $db = "trello";
     private $port = "3306";
     private $user = "root";
-    private $pass = "54985498";
+    private $pass = "";
     private $charset = "utf8";
     private $pdo;
 

@@ -31,7 +31,7 @@ require_once('../config/database.php');
 
     <!-- CONTENT HERE -->
     <div class="wrapper">
-        <h2>Trello</h2>
+        <h2>RCMS</h2>
         <form action="admin.php" method="post" role="form">
             <?php
             if (isset($_POST['login'])) {
