@@ -61,9 +61,9 @@ if (!isset($_SESSION['user'])) {
 
     <!-- CONTENT HERE -->
     <div class="row text-center">
-        <div class="col-lg-4 grey"><h3>In Que</h3></div>
-        <div class="col-lg-4 amber"><h3>Running</h3></div>
-        <div class="col-lg-4 green"><h3>Complete</h3></div>
+        <div class="col-lg-4 blue"><h3>In Que</h3></div>
+        <div class="col-lg-4 green"><h3>Running</h3></div>
+        <div class="col-lg-4 yellow"><h3>Complete</h3></div>
     </div>
     <div class="row">
         <div class="col-lg-4">

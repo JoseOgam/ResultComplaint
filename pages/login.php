@@ -28,10 +28,9 @@ require_once('../config/database.php');
 </head>
 <body id="login">
 <div class="container-fluid">
-
+    <h4 align="left">Result Complaint Management System</h4>
     <!-- CONTENT HERE -->
     <div class="wrapper">
-        <h2>ResultComplaintManagementSys</h2>
         <form action="login.php" method="post" role="form">
             <?php
             if (isset($_POST['login'])) {
@@ -74,7 +73,7 @@ require_once('../config/database.php');
             ?>
             <input type="text" class="form-control" name="regno" placeholder="RegNo">
             <input type="password" class="form-control" name="password" placeholder="Password">
-            <button type="submit" name="login" class="form-control btn btn-link">Sign In</button>
+            <button type="submit" name="login" class="form-control btn btn-link">Log In</button>
         </form>
     </div>
 </div>

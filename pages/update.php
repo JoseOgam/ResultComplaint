@@ -98,7 +98,7 @@ if (isset($_GET['issueId'])) {
         <div class="col-lg-4"><h4>Raised by</h4></div>
         <div class="col-lg-8"><?php echo "<div >{$issue['regno']}</div>" ?></div>
     </div>
-    <h4>Assign Issue</h4>
+    <h5>Assign Issue</h5>
 
     <form action="update.php" method="post" class="form-horizontal">
         <?php
