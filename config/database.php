@@ -7,10 +7,10 @@ class Database
      */
 
     private $host = "localhost";
-    private $db = "trello";
-    private $port = "3306";
+    private $db = "ResultComplaint";
+    private $port = "3307";
     private $user = "root";
-    private $pass = "";
+    private $pass = "Joseph94!";
     private $charset = "utf8";
     private $pdo;
 

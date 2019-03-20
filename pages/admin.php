@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * @author: IsaacNgeno
+ * @author: jose
  * Date: 12/17/18
  */
 
@@ -26,12 +26,13 @@ require_once('../config/database.php');
 
     </style>
 </head>
-<body id="login">
-<div class="container-fluid">
+<body id="login" class="btn-sm">
+<h2 class="breadcrumb">RESULT COMPLAINT MANAGEMENT SYSTEM</h2>
+<div class="form-control-static container-fluid" >
 
     <!-- CONTENT HERE -->
     <div class="wrapper">
-        <h2>RCMS</h2>
+
         <form action="admin.php" method="post" role="form">
             <?php
             if (isset($_POST['login'])) {
@@ -72,9 +73,9 @@ require_once('../config/database.php');
             }
 
             ?>
-            <input type="text" class="form-control" name="username" placeholder="Username">
-            <input type="password" class="form-control" name="password" placeholder="Password">
-            <button type="submit" name="login" class="form-control btn btn-link">Sign In</button>
+            <input type="text" class="form-control btn-info" name="username" placeholder="Username">
+            <input type="password" class="form-control btn-info" name="password" placeholder="Password">
+            <button type="submit" name="login" class="form-control btn-link">Sign In</button>
         </form>
     </div>
 </div>

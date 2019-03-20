@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * @author : IsaacNgeno
+ * @author : jose
  * Date: 12/15/18
  */
 
@@ -26,9 +26,10 @@ require_once('../config/database.php');
 
     </style>
 </head>
-<body id="login">
-<div class="container-fluid">
-    <h4 align="left">Result Complaint Management System</h4>
+<body id="login" class="btn-sm">
+<h2 class="">RESULT COMPLAINT MANAGEMENT SYSTEM</h2>
+<div class="form-control-static container-fluid">
+
     <!-- CONTENT HERE -->
     <div class="wrapper">
         <form action="login.php" method="post" role="form">
@@ -73,7 +74,7 @@ require_once('../config/database.php');
             ?>
             <input type="text" class="form-control" name="regno" placeholder="RegNo">
             <input type="password" class="form-control" name="password" placeholder="Password">
-            <button type="submit" name="login" class="form-control btn btn-link">Log In</button>
+            <button type="submit" name="login" class="form-control btn btn-link">Sign In</button>
         </form>
     </div>
 </div>
