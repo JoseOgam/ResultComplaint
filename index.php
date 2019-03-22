@@ -42,7 +42,7 @@ if (!isset($_SESSION['user'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Trello</a>
+                <a href="#" class="navbar-brand">Result Complaint</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <p class="navbar-text navbar-right">
@@ -73,8 +73,8 @@ if (!isset($_SESSION['user'])) {
         <div class="row">
             <div class="col-lg-4">
                 <?php
-                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=?");
-                $stm->execute(array("in_que"));
+                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=? AND `regno`=?");
+                $stm->execute(array("in_que", $_SESSION['user']));
                 if ($stm->rowCount() > 0) {
                     $issues = $stm->fetchAll();
 
