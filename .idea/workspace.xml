@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="406fb29c-2fd0-45e1-9f74-5624bd53a62d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.php" afterDir="false" />
-    </list>
+    <list default="true" id="406fb29c-2fd0-45e1-9f74-5624bd53a62d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,8 +134,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/signup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="513">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="e#6#73#0#PHP" expanded="true" />
                 <element signature="e#1466#1472#1#HTML" expanded="true" />
@@ -228,6 +225,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -377,16 +375,15 @@
       <workItem from="1552924361112" duration="1198000" />
       <workItem from="1552933751055" duration="14000" />
       <workItem from="1552933781316" duration="646000" />
-      <workItem from="1553228352915" duration="7562000" />
+      <workItem from="1553228352915" duration="8133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82380000" />
+    <option name="totallyTimeSpent" value="82951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21439394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -522,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/signup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="513">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="e#6#73#0#PHP" expanded="true" />
             <element signature="e#1466#1472#1#HTML" expanded="true" />
