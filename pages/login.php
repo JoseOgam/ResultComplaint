@@ -71,6 +71,7 @@ require_once('../config/database.php');
                 return $data;
             }
 
+
             ?>
             <input type="text" class="form-control" name="regno" placeholder="RegNo">
             <input type="password" class="form-control" name="password" placeholder="Password">
