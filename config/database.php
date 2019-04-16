@@ -3,7 +3,7 @@
 class Database
 {
     /**
-     * Make sure you replace with your configuration
+     * my Database configuration
      */
 
     private $host = "localhost";

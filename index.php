@@ -91,8 +91,8 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="col-lg-4">
                 <?php
-                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=?");
-                $stm->execute(array("running"));
+                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=? AND  `regno`=?");
+                $stm->execute(array("running", $user));
                 if ($stm->rowCount() > 0) {
                     $issues = $stm->fetchAll();
 
@@ -109,8 +109,8 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="col-lg-4">
                 <?php
-                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=?");
-                $stm->execute(array("complete"));
+                $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=? AND `regno`=?");
+                $stm->execute(array("complete", $user) );
                 if ($stm->rowCount() > 0) {
                     $issues = $stm->fetchAll();
 
@@ -138,8 +138,7 @@ if (!isset($_SESSION['user'])) {
                         <h4 class="modal-title">Create Issue</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="index.php" method="post" class="form-horizontal">
-                            <input type="hidden" name="user" value="<?= $user ?>">
+                        <form action="" method="post" class="form-horizontal">
                             <input type="text" class="form-control" name="title" placeholder="Title">
                             <textarea name="description" id="description" class="form-control" cols="30" rows="10"
                                       placeholder="Description"></textarea>
@@ -165,13 +164,13 @@ if (!isset($_SESSION['user'])) {
 <?php
 if (isset($_POST['create'])) {
     $title = $_POST['title'];
-    $username = $_POST['user'];
+    $username = $_SESSION['user'];
     $description = $_POST['description'];
 
     if (!empty($title) && !empty($username) && !empty($description)) {
         $statement = $pdo->prepare("INSERT INTO `issues`( `title`, `description`, `regno`, `status`) VALUES (?, ?, ?, ?)");
         if ($statement->execute(array($title, $description, $username, "in_que"))) {
-            header("Location: index.php");
+            // header("Location: index.php");
         }
     }
 }

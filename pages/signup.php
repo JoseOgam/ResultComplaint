@@ -31,6 +31,7 @@ require_once('../config/database.php');
 <h2 class="">RESULT COMPLAINT MANAGEMENT SYSTEM</h2>
 <div class="form-control-static container-fluid">
 
+    <h4>New student? signup or <a> log in </a href = 'login.php' > if you an account! </h4>
     <div class="wrapper">
 
         <form action="" method="post">

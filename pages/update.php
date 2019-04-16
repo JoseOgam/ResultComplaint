@@ -100,26 +100,8 @@ if (isset($_GET['issueId'])) {
     </div>
     <h4>Assign Issue</h4>
 
-    <form action="update.php" method="post" class="form-horizontal">
-        <?php
-        if (isset($_POST['assign'])){
-            $assignee = $_POST['assignee'];
-            $id = $issueId;
-            $admId = $_SESSION['user'];
-            $progress = "running";
-            $remarks = $_POST['remarks'];
-            if (!empty($assignee)){
-                $stm = $pdo->prepare("INSERT INTO `issue_progress`(`issue_id`, `admin_id`, `progress`, `remarks`) VALUES (?, ?, ?, ?, ?)");
-                if ($stm->execute(array($id, $admId, $progress, $remarks))){
-
-                    $state = $pdo->prepare("UPDATE `issues` SET `status`=? WHERE `id`=?");
-                    $state->execute(array($progress, $id));
-                    echo "<div class='alert alert-success'>Issue has been successfully assigned to {$assignee}</div>";
-                }
-
-            }
-        }
-        ?>
+    <form action="assign.php" method="post" class="form-horizontal">
+        <input type="hidden" name="id" value='<?php echo $issueId?>'>
         <select class="form-control" name="assignee" id="assign" >
             <?php
             $statement = $pdo->prepare("SELECT * FROM `admins`");

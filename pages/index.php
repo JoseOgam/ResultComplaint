@@ -68,7 +68,7 @@ if (!isset($_SESSION['user'])) {
     <div class="row">
         <div class="col-lg-4">
             <?php
-            $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=?");
+            $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=? ");
             $stm->execute(array("in_que"));
             if ($stm->rowCount() > 0) {
                 $issues = $stm->fetchAll();
@@ -108,7 +108,7 @@ if (!isset($_SESSION['user'])) {
         </div>
         <div class="col-lg-4">
             <?php
-            $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=?");
+            $stm = $pdo->prepare("SELECT * FROM `issues` WHERE `status`=? ");
             $stm->execute(array("complete"));
             if ($stm->rowCount() > 0) {
                 $issues = $stm->fetchAll();
